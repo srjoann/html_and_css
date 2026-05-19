@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="es-CO">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing</title>
@@ -8,25 +9,38 @@
     <!-- ETIQUETAS SEO -->
     <meta name="author" content="Joan Stiven Valderrama" />
     <meta name="description" content="Taller #2 de html y css" />
-    <meta
-      name="keywords"
-      content="Desarrollo, Frontend, Maquetado Web, HTML, CSS."
-    />
+    <meta name="keywords" content="Desarrollo, Frontend, Maquetado Web, HTML, CSS." />
 
     <!-- RENDIMIENTO Y PWA -->
     <meta name="theme-color" content="#1a1a1a" />
     <meta name="MobileOptimized" content="width" />
     <meta name="HandheldFriendly" content="true" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <link
-      rel="shortcut icon"
-      href="assets/img/logo_sena.webp"
-      type="image/png"
-    />
-  </head>
-  <body></body>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="shortcut icon" href="assets/img/logo_sena.webp" type="image/png" />
+
+    <style>
+        /* element selector: establecer <p> el color de todos los elementos en dimgray*/
+        p {
+            color: dimgray
+        }
+
+       /* class selector: Utilice un selector de clase para establecer .highlightel color de fondo amarillo*/
+        .highlight {
+            background-color: yellow;
+        }
+
+       /* id selector: Utilice un selector de ID para establecer #intro el tamaño de fuente de 20 pixeles */
+        #intro {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="intro">Welcome to CSS selectors.</p>
+    <p>This is a normal paragraph.</p>
+    <p class="highlight">This paragraph is highlighed</p>
+</body>
+
 </html>
