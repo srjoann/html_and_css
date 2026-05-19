@@ -18,29 +18,44 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link rel="shortcut icon" href="assets/img/logo_sena.webp" type="image/png" />
-
-    <style>
-        /* element selector: establecer <p> el color de todos los elementos en dimgray*/
-        p {
-            color: dimgray
-        }
-
-       /* class selector: Utilice un selector de clase para establecer .highlightel color de fondo amarillo*/
-        .highlight {
-            background-color: yellow;
-        }
-
-       /* id selector: Utilice un selector de ID para establecer #intro el tamaño de fuente de 20 pixeles */
-        #intro {
-            font-size: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-    <p id="intro">Welcome to CSS selectors.</p>
-    <p>This is a normal paragraph.</p>
-    <p class="highlight">This paragraph is highlighed</p>
+    <!-- 
+      1. Crear un css externo
+      2. incluir un css externo en el html
+      3. crear un div con clase container 
+      4. dentro del div crear un header con clase "header" y un h1 con el texto "Taller 2" 
+      5. Crear un nav con clase "nav" y dentro de este crear una lista desordenada con 3 elementos de lista,
+      cada uno con un enlace a una seccion del sitio (Inicio, Servicios, Contacto) 
+      6. Crear una seccion con clase main y dentro de esta crear un articulo con clase "article" que 
+      contenga un h2 con el texto "Bienvenido al taller 2" y un parrafo con texto de relleno
+      7. Crer un footer con clase footer y dentro de este crear un parrafo con el teto "Nombre y Apellidos. Todos
+      los derechos reservados@2026"
+      8. Aplicar los estilos al css para que el sitio tenga un diseño atractivo y sea responsive--> 
+
+      <div class="container">
+        <header class="header"><h1>Taller 2</h1></header>
+        <nav>
+        <ul>
+            <a href="#">
+            <li>Inicio</li>
+            </a>
+            <a href="#"><li>Servicios</li></a>
+            <a href="#"><li>Contacto</li></a>
+        </ul>
+      </nav>
+      <section class="main">
+        <article class="article">
+            <h2>Bienvenidos al taller 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Aperiam earum corporis qui soluta, doloribus incidunt esse dolorem ea ab e
+                st eum sed vel iste ad, placeat, harum explicabo possimus veritatis.</p>
+        </article>
+      </section>
+      <footer>&copy; Joan Stiven Rios Valderrama. Todos los derechos reservados 2026.</footer>
+      </div>
 </body>
 
 </html>
