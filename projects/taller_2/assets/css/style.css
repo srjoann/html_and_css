@@ -168,6 +168,20 @@ footer {
   padding: 18px;
 }
 
+.bento-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 5px;
+  gap: 5px;
+}
+
+.bento-grid div {
+  text-align: center;
+  padding: 10px;
+  border-radius: 16px;
+  background-color: #cfcfcf;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   ul {
