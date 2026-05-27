@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Liquid Aurora Background 2026</title>
+
+<style>
+
+/* =========================================
+   RESET
+========================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,
+body{
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  font-family:Inter,system-ui,sans-serif;
+  background:#050816;
+}
+
+/* =========================================
+   ROOT
+========================================= */
+
+:root{
+
+  --bg-1:#050816;
+  --bg-2:#12002d;
+
+  --c1:0,132,255;
+  --c2:255,0,170;
+  --c3:110,0,255;
+  --c4:0,255,200;
+  --c5:255,180,0;
+
+  --size:80vmax;
+
+}
+
+/* =========================================
+   BODY BG
+========================================= */
+
+body{
+
+  background:
+    radial-gradient(circle at top left,#1d1447 0%,transparent 40%),
+    radial-gradient(circle at bottom right,#001b38 0%,transparent 40%),
+    linear-gradient(135deg,var(--bg-1),var(--bg-2));
+
+}
+
+/* =========================================
+   WRAPPER
+========================================= */
+
+.wrapper{
+  position:relative;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+}
+
+/* =========================================
+   SVG FILTER
+========================================= */
+
+svg{
+  position:absolute;
+  width:0;
+  height:0;
+}
+
+/* =========================================
+   BLOBS CONTAINER
+========================================= */
+
+.blobs{
+
+  position:absolute;
+  inset:0;
+
+  filter:
+    url(#goo)
+    blur(55px)
+    saturate(180%)
+    contrast(140%);
+
+}
+
+/* =========================================
+   BLOBS
+========================================= */
+
+.blob{
+
+  position:absolute;
+
+  width:var(--size);
+  height:var(--size);
+
+  border-radius:50%;
+
+  opacity:.9;
+
+  will-change:transform;
+
+  transform:translate3d(0,0,0);
+
+  backface-visibility:hidden;
+
+  mix-blend-mode:color-dodge;
+
+}
+
+/* =========================================
+   GRADIENTS
+========================================= */
+
+.blob::before{
+
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  border-radius:inherit;
+
+}
+
+/* =========================================
+   BLOB 1
+========================================= */
+
+.blob-1{
+
+  top:-25%;
+  left:-10%;
+
+  animation:
+    float1 14s linear infinite,
+    drift1 9s linear infinite;
+
+}
+
+.blob-1::before{
+
+  background:
+    radial-gradient(circle,
+
+      rgba(var(--c1),1) 0%,
+      rgba(var(--c1),0.55) 30%,
+      rgba(var(--c1),0.18) 55%,
+      transparent 75%
+
+    );
+
+}
+
+/* =========================================
+   BLOB 2
+========================================= */
+
+.blob-2{
+
+  top:-15%;
+  right:-15%;
+
+  animation:
+    float2 18s linear infinite,
+    drift2 11s linear infinite reverse;
+
+}
+
+.blob-2::before{
+
+  background:
+    radial-gradient(circle,
+
+      rgba(var(--c2),1) 0%,
+      rgba(var(--c2),0.5) 35%,
+      rgba(var(--c2),0.16) 60%,
+      transparent 80%
+
+    );
+
+}
+
+/* =========================================
+   BLOB 3
+========================================= */
+
+.blob-3{
+
+  bottom:-30%;
+  left:5%;
+
+  animation:
+    float3 16s linear infinite,
+    drift3 8s linear infinite;
+
+}
+
+.blob-3::before{
+
+  background:
+    radial-gradient(circle,
+
+      rgba(var(--c3),1) 0%,
+      rgba(var(--c3),0.45) 35%,
+      rgba(var(--c3),0.14) 60%,
+      transparent 80%
+
+    );
+
+}
+
+/* =========================================
+   BLOB 4
+========================================= */
+
+.blob-4{
+
+  bottom:-20%;
+  right:-5%;
+
+  animation:
+    float4 20s linear infinite,
+    drift4 13s linear infinite reverse;
+
+}
+
+.blob-4::before{
+
+  background:
+    radial-gradient(circle,
+
+      rgba(var(--c4),1) 0%,
+      rgba(var(--c4),0.45) 35%,
+      rgba(var(--c4),0.14) 60%,
+      transparent 80%
+
+    );
+
+}
+
+/* =========================================
+   BLOB 5
+========================================= */
+
+.blob-5{
+
+  top:20%;
+  left:30%;
+
+  animation:
+    float5 15s linear infinite,
+    drift5 10s linear infinite;
+
+}
+
+.blob-5::before{
+
+  background:
+    radial-gradient(circle,
+
+      rgba(var(--c5),1) 0%,
+      rgba(var(--c5),0.4) 35%,
+      rgba(var(--c5),0.12) 60%,
+      transparent 80%
+
+    );
+
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.content{
+
+  position:relative;
+  z-index:20;
+
+  width:100%;
+  height:100%;
+
+  display:grid;
+  place-items:center;
+
+  text-align:center;
+
+  color:white;
+
+}
+
+h1{
+
+  font-size:clamp(3rem,8vw,9rem);
+
+  font-weight:900;
+
+  letter-spacing:-0.08em;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #d7d7ff,
+      #ffffff
+    );
+
+  -webkit-background-clip:text;
+
+  color:transparent;
+
+  text-shadow:
+    0 0 40px rgba(255,255,255,.15);
+
+}
+
+p{
+
+  margin-top:1rem;
+
+  font-size:1.1rem;
+
+  opacity:.7;
+
+}
+
+/* =========================================
+   FLOAT 1
+========================================= */
+
+@keyframes float1{
+
+  0%{
+    transform:translate(0vw,0vh) scale(1);
+  }
+
+  25%{
+    transform:translate(14vw,8vh) scale(1.08);
+  }
+
+  50%{
+    transform:translate(26vw,-8vh) scale(.94);
+  }
+
+  75%{
+    transform:translate(12vw,18vh) scale(1.14);
+  }
+
+  100%{
+    transform:translate(4vw,10vh) scale(1.02);
+  }
+
+}
+
+/* =========================================
+   FLOAT 2
+========================================= */
+
+@keyframes float2{
+
+  0%{
+    transform:translate(0vw,0vh) scale(1);
+  }
+
+  20%{
+    transform:translate(-18vw,12vh) scale(1.05);
+  }
+
+  45%{
+    transform:translate(-32vw,5vh) scale(.92);
+  }
+
+  70%{
+    transform:translate(-10vw,-18vh) scale(1.12);
+  }
+
+  100%{
+    transform:translate(-5vw,7vh) scale(1.01);
+  }
+
+}
+
+/* =========================================
+   FLOAT 3
+========================================= */
+
+@keyframes float3{
+
+  0%{
+    transform:translate(0vw,0vh) scale(1);
+  }
+
+  30%{
+    transform:translate(10vw,-20vh) scale(1.1);
+  }
+
+  60%{
+    transform:translate(22vw,-10vh) scale(.94);
+  }
+
+  85%{
+    transform:translate(-5vw,10vh) scale(1.08);
+  }
+
+  100%{
+    transform:translate(2vw,5vh) scale(1.01);
+  }
+
+}
+
+/* =========================================
+   FLOAT 4
+========================================= */
+
+@keyframes float4{
+
+  0%{
+    transform:translate(0vw,0vh) scale(1);
+  }
+
+  35%{
+    transform:translate(-20vw,-12vh) scale(1.15);
+  }
+
+  65%{
+    transform:translate(-34vw,6vh) scale(.9);
+  }
+
+  90%{
+    transform:translate(-10vw,16vh) scale(1.05);
+  }
+
+  100%{
+    transform:translate(-4vw,5vh) scale(1.02);
+  }
+
+}
+
+/* =========================================
+   FLOAT 5
+========================================= */
+
+@keyframes float5{
+
+  0%{
+    transform:translate(0vw,0vh) scale(1);
+  }
+
+  28%{
+    transform:translate(12vw,-10vh) scale(1.1);
+  }
+
+  58%{
+    transform:translate(-14vw,15vh) scale(.92);
+  }
+
+  82%{
+    transform:translate(8vw,22vh) scale(1.14);
+  }
+
+  100%{
+    transform:translate(2vw,8vh) scale(1.01);
+  }
+
+}
+
+/* =========================================
+   DRIFT
+========================================= */
+
+@keyframes drift1{
+  from{ rotate:0deg; }
+  to{ rotate:359deg; }
+}
+
+@keyframes drift2{
+  from{ rotate:359deg; }
+  to{ rotate:0deg; }
+}
+
+@keyframes drift3{
+  from{ rotate:0deg; }
+  to{ rotate:359deg; }
+}
+
+@keyframes drift4{
+  from{ rotate:359deg; }
+  to{ rotate:0deg; }
+}
+
+@keyframes drift5{
+  from{ rotate:0deg; }
+  to{ rotate:359deg; }
+}
+
+
+
+/* =========================================
+   GRAIN ANIMATION
+========================================= */
+
+@keyframes grainMove{
+
+  0%{
+    transform:translate(0,0);
+  }
+
+  10%{
+    transform:translate(-5%,-10%);
+  }
+
+  20%{
+    transform:translate(-15%,5%);
+  }
+
+  30%{
+    transform:translate(7%,-25%);
+  }
+
+  40%{
+    transform:translate(-5%,25%);
+  }
+
+  50%{
+    transform:translate(-15%,10%);
+  }
+
+  60%{
+    transform:translate(15%,0%);
+  }
+
+  70%{
+    transform:translate(0%,15%);
+  }
+
+  80%{
+    transform:translate(3%,35%);
+  }
+
+  90%{
+    transform:translate(-10%,10%);
+  }
+
+  100%{
+    transform:translate(0,0);
+  }
+
+}
+
+/* =========================================
+   EXTRA LIGHT GLOW
+========================================= */
+
+.wrapper::before{
+
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  z-index:2;
+
+  pointer-events:none;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,.06),
+      transparent 60%
+    );
+
+  mix-blend-mode:soft-light;
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width:768px){
+
+  :root{
+    --size:100vmax;
+  }
+
+  .blobs{
+
+    filter:
+      url(#goo)
+      blur(40px)
+      saturate(150%)
+      contrast(120%);
+
+  }
+
+  h1{
+    font-size:4rem;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <!-- SVG FILTER -->
+
+  <svg xmlns="http://www.w3.org/2000/svg">
+
+    <defs>
+
+      <filter id="goo">
+
+        <feGaussianBlur
+          in="SourceGraphic"
+          stdDeviation="18"
+          result="blur"
+        />
+
+        <feColorMatrix
+          in="blur"
+          mode="matrix"
+          values="
+            1 0 0 0 0
+            0 1 0 0 0
+            0 0 1 0 0
+            0 0 0 25 -12
+          "
+          result="goo"
+        />
+
+        <feBlend
+          in="SourceGraphic"
+          in2="goo"
+        />
+
+      </filter>
+
+    </defs>
+
+  </svg>
+
+  <!-- BLOBS -->
+
+  <div class="blobs">
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+    <div class="blob blob-5"></div>
+
+  </div>
+
+  <!-- CONTENT -->
+
+  <div class="content">
+
+    <div>
+
+      <h1>Aurora Liquid</h1>
+
+      <p>Pure HTML + CSS • 2026 aesthetic</p>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

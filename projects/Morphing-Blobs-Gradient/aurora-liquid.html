@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Liquid Aurora Background 2026</title>
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;background:#050816}
+
+/* =========================================
+   ROOT
+   ========================================= */
+
+:root{
+  --bg-1:#050816;
+  --bg-2:#12002d;
+  --c1:0,132,255;
+  --c2:255,0,170;
+  --c3:110,0,255;
+  --c4:0,255,200;
+  --c5:255,180,0;
+  --size:80vmax;
+}
+
+/* =========================================
+   BODY
+   ========================================= */
+
+body{
+  background:
+    radial-gradient(circle at top left,#1d1447 0%,transparent 40%),
+    radial-gradient(circle at bottom right,#001b38 0%,transparent 40%),
+    linear-gradient(135deg,var(--bg-1),var(--bg-2));
+}
+
+/* =========================================
+   WRAPPER
+   ========================================= */
+
+.wrapper{position:relative;width:100%;height:100%;overflow:hidden}
+
+/* =========================================
+   SVG FILTER — hidden
+   ========================================= */
+
+svg{position:absolute;width:0;height:0}
+
+/* =========================================
+   BLOBS CONTAINER
+   ========================================= */
+
+.blobs{
+  position:absolute;
+  inset:0;
+  filter:url(#goo) blur(55px) saturate(180%) contrast(140%);
+}
+
+/* =========================================
+   BLOB WRAPPERS
+   Cada .bw mueve sólo en X.
+   Cada .blob (hijo) mueve sólo en Y.
+   La combinación produce trayectorias
+   Lissajous perfectamente suaves y continuas.
+   ========================================= */
+
+.bw{
+  position:absolute;
+  width:var(--size);
+  height:var(--size);
+  will-change:transform;
+  backface-visibility:hidden;
+}
+
+.blob{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  opacity:.9;
+  mix-blend-mode:color-dodge;
+  will-change:transform;
+  backface-visibility:hidden;
+}
+
+.blob::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+}
+
+/* =========================================
+   POSICIONES BASE
+   ========================================= */
+
+.bw-1{top:-25%;left:-10%}
+.bw-2{top:-15%;right:-15%}
+.bw-3{bottom:-30%;left:5%}
+.bw-4{bottom:-20%;right:-5%}
+.bw-5{top:20%;left:30%}
+
+/* =========================================
+   GRADIENTES DE LOS BLOBS
+   ========================================= */
+
+.blob-1::before{background:radial-gradient(circle,rgba(var(--c1),1) 0%,rgba(var(--c1),.55) 30%,rgba(var(--c1),.18) 55%,transparent 75%)}
+.blob-2::before{background:radial-gradient(circle,rgba(var(--c2),1) 0%,rgba(var(--c2),.50) 35%,rgba(var(--c2),.16) 60%,transparent 80%)}
+.blob-3::before{background:radial-gradient(circle,rgba(var(--c3),1) 0%,rgba(var(--c3),.45) 35%,rgba(var(--c3),.14) 60%,transparent 80%)}
+.blob-4::before{background:radial-gradient(circle,rgba(var(--c4),1) 0%,rgba(var(--c4),.45) 35%,rgba(var(--c4),.14) 60%,transparent 80%)}
+.blob-5::before{background:radial-gradient(circle,rgba(var(--c5),1) 0%,rgba(var(--c5),.40) 35%,rgba(var(--c5),.12) 60%,transparent 80%)}
+
+/* =========================================
+   ANIMACIONES — MOVIMIENTO EN X
+   ease-in-out + alternate = onda senoidal pura.
+   Sin saltos, sin reinicios bruscos.
+   ========================================= */
+
+.bw-1{animation:bwX1 13s ease-in-out infinite alternate}
+.bw-2{animation:bwX2 17s ease-in-out infinite alternate}
+.bw-3{animation:bwX3 11s ease-in-out infinite alternate}
+.bw-4{animation:bwX4 19s ease-in-out infinite alternate}
+.bw-5{animation:bwX5 15s ease-in-out infinite alternate}
+
+@keyframes bwX1{from{transform:translateX(0)}to{transform:translateX(28vw)}}
+@keyframes bwX2{from{transform:translateX(-32vw)}to{transform:translateX(0)}}
+@keyframes bwX3{from{transform:translateX(0)}to{transform:translateX(24vw)}}
+@keyframes bwX4{from{transform:translateX(-26vw)}to{transform:translateX(0)}}
+@keyframes bwX5{from{transform:translateX(-16vw)}to{transform:translateX(16vw)}}
+
+/* =========================================
+   ANIMACIONES — MOVIMIENTO EN Y
+   Duraciones distintas a X → crea figuras
+   de Lissajous, nunca se repite el patrón.
+   ========================================= */
+
+.blob-1{animation:bY1 9s ease-in-out infinite alternate}
+.blob-2{animation:bY2 12s ease-in-out infinite alternate}
+.blob-3{animation:bY3 8s ease-in-out infinite alternate}
+.blob-4{animation:bY4 14s ease-in-out infinite alternate}
+.blob-5{animation:bY5 11s ease-in-out infinite alternate}
+
+@keyframes bY1{from{transform:translateY(0)}to{transform:translateY(32vh)}}
+@keyframes bY2{from{transform:translateY(0)}to{transform:translateY(30vh)}}
+@keyframes bY3{from{transform:translateY(-30vh)}to{transform:translateY(0)}}
+@keyframes bY4{from{transform:translateY(-26vh)}to{transform:translateY(0)}}
+@keyframes bY5{from{transform:translateY(-14vh)}to{transform:translateY(20vh)}}
+
+/* =========================================
+   CONTENIDO
+   ========================================= */
+
+.content{
+  position:relative;
+  z-index:20;
+  width:100%;
+  height:100%;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  color:white;
+}
+
+h1{
+  font-size:clamp(3rem,8vw,9rem);
+  font-weight:900;
+  letter-spacing:-0.08em;
+  background:linear-gradient(90deg,#ffffff,#d7d7ff,#ffffff);
+  -webkit-background-clip:text;
+  color:transparent;
+  text-shadow:0 0 40px rgba(255,255,255,.15);
+}
+
+p{
+  margin-top:1rem;
+  font-size:1.1rem;
+  opacity:.7;
+  font-family:Inter,system-ui,sans-serif;
+}
+
+/* =========================================
+   GRAIN OVERLAY
+   ========================================= */
+
+.wrapper::after{
+  content:"";
+  position:absolute;
+  inset:-200%;
+  pointer-events:none;
+  opacity:.13;
+  mix-blend-mode:overlay;
+  animation:grainMove 8s steps(6) infinite;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+}
+
+@keyframes grainMove{
+  0%  {transform:translate(0,0)}
+  10% {transform:translate(-5%,-10%)}
+  20% {transform:translate(-15%,5%)}
+  30% {transform:translate(7%,-25%)}
+  40% {transform:translate(-5%,25%)}
+  50% {transform:translate(-15%,10%)}
+  60% {transform:translate(15%,0%)}
+  70% {transform:translate(0%,15%)}
+  80% {transform:translate(3%,35%)}
+  90% {transform:translate(-10%,10%)}
+  100%{transform:translate(0,0)}
+}
+
+/* =========================================
+   VIGNETTE SUAVE
+   ========================================= */
+
+.wrapper::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  background:radial-gradient(circle at center,rgba(255,255,255,.06),transparent 60%);
+  mix-blend-mode:soft-light;
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media(max-width:768px){
+  :root{--size:100vmax}
+  .blobs{filter:url(#goo) blur(40px) saturate(150%) contrast(120%)}
+  h1{font-size:4rem}
+}
+
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <!-- FILTRO SVG GOO -->
+  <svg xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="18" result="blur"/>
+        <feColorMatrix in="blur" mode="matrix"
+          values="1 0 0 0 0
+                  0 1 0 0 0
+                  0 0 1 0 0
+                  0 0 0 25 -12"
+          result="goo"/>
+        <feBlend in="SourceGraphic" in2="goo"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- BLOBS: cada .bw mueve X, cada .blob mueve Y -->
+  <div class="blobs">
+
+    <div class="bw bw-1"><div class="blob blob-1"></div></div>
+    <div class="bw bw-2"><div class="blob blob-2"></div></div>
+    <div class="bw bw-3"><div class="blob blob-3"></div></div>
+    <div class="bw bw-4"><div class="blob blob-4"></div></div>
+    <div class="bw bw-5"><div class="blob blob-5"></div></div>
+
+  </div>
+
+  <!-- CONTENIDO -->
+  <div class="content">
+    <div>
+      <h1>Aurora Liquid</h1>
+      <p>Pure HTML + CSS · 2026 aesthetic</p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
