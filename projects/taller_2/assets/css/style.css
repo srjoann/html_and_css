@@ -17,7 +17,7 @@
 }
 
 h2 {
-  margin-bottom: 10px;  
+  margin-bottom: 10px;
   font-size: 44px;
 }
 
@@ -92,7 +92,7 @@ a {
   min-width: 320px;
   max-width: 45%;
   background-color: white;
-  border-radius: 20px;  
+  border-radius: 20px;
   padding: 20px;
 }
 
@@ -272,4 +272,53 @@ section {
   .box-content {
     width: 100%;
   }
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  grid-template-rows: 100px auto;
+  gap: 10px;
+}
+
+.grid-cell {
+  background-color: #cfcfcf;
+  border-radius: 16px;
+}
+
+header.header-cell {
+  grid-column: 1 / -1;
+}
+
+/* componentes del grid interno */
+.header-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aside-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-cell {
+    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
