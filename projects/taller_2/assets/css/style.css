@@ -277,12 +277,14 @@ section {
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 200px;
+  grid-template-columns: 1fr 1000px;
   grid-template-rows: 100px auto;
   gap: 10px;
 }
 
 .grid-cell {
+  justify-content: center;
+  align-items: center;
   background-color: #cfcfcf;
   border-radius: 16px;
 }
@@ -305,18 +307,21 @@ header.header-cell {
 }
 
 .main-cell {
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .section-cell {
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .footer-cell {
+  padding: 20px;
     width: 100%;
   display: flex;
   align-items: center;
