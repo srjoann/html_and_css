@@ -277,8 +277,8 @@ section {
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1000px;
-  grid-template-rows: 100px auto;
+  grid-template-columns: 200px 1fr 1fr;
+  grid-template-rows: auto 1fr auto auto;
   gap: 10px;
 }
 
@@ -321,9 +321,6 @@ header.header-cell {
 }
 
 .footer-cell {
-  padding: 20px;
-    width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+width: 100%;
+
 }
