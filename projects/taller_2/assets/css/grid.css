@@ -86,7 +86,7 @@
 .box-model {
   width: 100%;
   background-color: var(--bg);
-  border-radius: var(--r-md);
+  border-radius: var(--r-lg);
   padding: var(--pad);
   display: flex;
   justify-content: center;
@@ -105,7 +105,7 @@
   text-align: center;
 }
 
-.box-margin  { background-color: #ffdfa7; padding: 44px 40px 28px; }
+.box-margin  { background-color: #fff158; padding: 44px 40px 28px; }
 .box-border  { background-color: #ffa7a7; padding: 36px 34px 26px; border: 8px solid #33333338; }
 .box-padding { background-color: #d3ffba; padding: 32px 30px 24px; }
 
@@ -125,8 +125,8 @@
 .box-content {
   width: 100%;
   min-height: 100px;
-  background-color: rgb(104, 187, 255);
-  border-radius: var(--r-lg);
+  background-color: rgb(154, 209, 255);
+  border-radius: var(--r-md);
   display: flex;
   align-items: center;
   justify-content: center;
