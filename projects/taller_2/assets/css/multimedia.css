@@ -1,0 +1,160 @@
+/* ================================================
+   multimedia.css — Estilos exclusivos de multimedia.html
+   Depende de: base.css
+   ================================================ */
+
+
+/* ── Títulos de sección ── */
+
+.section-title {
+  display: inline-block;
+  width: fit-content;
+  padding: 10px 20px;
+  background-color: var(--surface-4);
+  border-radius: var(--r-pill);
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.section-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 0 4px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+
+/* ── Bento grid: layout de 2 columnas ── */
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap);
+  width: 100%;
+}
+
+/* La sección de video ocupa todo el ancho */
+.bento-item--full {
+  grid-column: 1 / -1;
+}
+
+
+/* ── Bento item (tarjeta contenedora) ── */
+
+.bento-item {
+  background-color: var(--bg);
+  border-radius: var(--r-lg);
+  padding: var(--pad);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+/* ── Grids internos: audio / video / imagen ── */
+
+.media-grid {
+  display: flex;
+  gap: var(--gap);
+  align-items: stretch;
+}
+
+.media-card {
+  flex: 1;
+  padding: var(--pad);
+  background-color: var(--surface-4);
+  border-radius: var(--r-md);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.media-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+
+/* ── Wrapper de elementos multimedia ── */
+
+.media-wrapper {
+  width: 100%;
+  background-color: var(--surface-4);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--pad);
+}
+
+
+/* ── Audio ── */
+
+audio {
+  width: 100%;
+  border-radius: var(--r-md);
+}
+
+
+/* ── Video ── */
+
+video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--r-md);
+  display: block;
+}
+
+
+/* ── iFrame (YouTube) ── */
+
+iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: var(--r-md);
+  display: block;
+}
+
+
+/* ── Wrapper sin padding para video e iframe (ocupan todo el espacio) ── */
+
+.media-wrapper--flush {
+  padding: 0;
+}
+
+
+/* ── Imágenes ── */
+
+.media-wrapper img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: var(--r-md);
+  display: block;
+}
+
+
+/* ── Responsive ── */
+
+@media (max-width: 900px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-item--full {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .media-grid {
+    flex-direction: column;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+}

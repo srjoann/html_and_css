@@ -1,76 +1,63 @@
 <!doctype html>
 <html lang="es-CO">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Landing</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taller 2 — Inicio</title>
 
-        <!-- ETIQUETAS SEO -->
-        <meta name="author" content="Joan Stiven Valderrama" />
-        <meta name="description" content="Taller #2 de html y css" />
-        <meta
-            name="keywords"
-            content="Desarrollo, Frontend, Maquetado Web, HTML, CSS."
-        />
+    <!-- SEO -->
+    <meta name="author"      content="Joan Stiven Rios Valderrama" />
+    <meta name="description" content="Taller #2 de HTML y CSS — Página de inicio" />
+    <meta name="keywords"    content="Desarrollo, Frontend, Maquetado Web, HTML, CSS" />
 
-        <!-- RENDIMIENTO Y PWA -->
-        <meta name="theme-color" content="#1a1a1a" />
-        <meta name="MobileOptimized" content="width" />
-        <meta name="HandheldFriendly" content="true" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta
-            name="apple-mobile-web-app-status-bar-style"
-            content="black-translucent"
-        />
-        <link
-            rel="shortcut icon"
-            href="assets/img/logo_sena.webp"
-            type="image/png"
-        />
-        <link rel="stylesheet" href="./assets/css/style.css" />
-    </head>
+    <!-- PWA / rendimiento móvil -->
+    <meta name="theme-color"                           content="#1a1a1a" />
+    <meta name="MobileOptimized"                       content="width" />
+    <meta name="HandheldFriendly"                      content="true" />
+    <meta name="mobile-web-app-capable"                content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <body>
-        <div class="container">
-            <header class="header">
-                <h1>Taller 2</h1>
-            </header>
+    <!-- Ícono -->
+    <link rel="shortcut icon" href="./assets/img/logo_sena.webp" type="image/webp" />
 
-            <nav>
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="grid.html">Grid</a></li>
-                    <li><a href="multimedia.html">Multimedia</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
+    <!-- Estilos: base primero, luego los específicos de la página -->
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+  </head>
 
-            <section class="main">
-                <article class="article">
-                    <h2>Bienvenido al segundo taller de html y css</h2>
-                    <p>En este taller exploraremos las etiquetas de audio y video
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis minima et doloremque temporibus recusandae in vitae necessitatibus. Maiores exercitationem reiciendis, sequi laudantium voluptatum reprehenderit, nulla similique rem consequatur consequuntur doloremque.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi recusandae, laudantium quid asda
-                    </p>
-                </article>
+  <body>
 
-                <section class="container-box-model">
-                    <div class="box-margin">
-                        <span class="box-label">Margin</span>
-                        <div class="box-border">
-                            <span class="box-label">Border</span>
-                            <div class="box-padding">
-                                <span class="box-label">Padding</span>
-                                <div class="box-content">Content</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </section>
-            <footer>
-                Joan Stiven Rios Valderrama. Todos los derechos reservados
-                &copy; 2026.
-            </footer>
-        </div>
-    </body>
+    <!-- ══════════════════ HEADER ══════════════════ -->
+    <header class="header">
+      <h1>Taller 2</h1>
+
+      <!-- nav: el enlace de la página actual lleva la clase "active" -->
+      <nav class="nav" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html" class="active">Inicio</a></li>
+          <li class="nav__item"><a href="grid.html">Grid</a></li>
+          <li class="nav__item"><a href="multimedia.html">Multimedia</a></li>
+          <li class="nav__item"><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ══════════════════ MAIN ══════════════════ -->
+    <main>
+      <article class="welcome">
+        <h2>Bienvenido al segundo taller de HTML y CSS</h2>
+        <p>
+          En este taller exploraremos los fundamentos del maquetado web:
+          uso de Grid CSS, manejo de archivos multimedia y buenas prácticas
+          de código limpio.
+        </p>
+      </article>
+    </main>
+
+    <!-- ══════════════════ FOOTER ══════════════════ -->
+    <footer class="footer">
+      Joan Stiven Rios Valderrama &mdash; Todos los derechos reservados &copy; 2026.
+    </footer>
+
+  </body>
 </html>

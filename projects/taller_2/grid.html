@@ -1,70 +1,108 @@
 <!doctype html>
 <html lang="es-CO">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Landing</title>
+    <title>Taller 2 — Grid</title>
 
-    <!-- ETIQUETAS SEO -->
-    <meta name="author" content="Joan Stiven Valderrama" />
-    <meta name="description" content="Taller #2 de html y css" />
-    <meta name="keywords" content="Desarrollo, Frontend, Maquetado Web, HTML, CSS." />
+    <!-- SEO -->
+    <meta name="author"      content="Joan Stiven Rios Valderrama" />
+    <meta name="description" content="Taller #2 de HTML y CSS — Grid y Box Model" />
+    <meta name="keywords"    content="Desarrollo, Frontend, Maquetado Web, HTML, CSS, Grid" />
 
-    <!-- RENDIMIENTO Y PWA -->
-    <meta name="theme-color" content="#1a1a1a" />
-    <meta name="MobileOptimized" content="width" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- PWA / rendimiento móvil -->
+    <meta name="theme-color"                           content="#1a1a1a" />
+    <meta name="MobileOptimized"                       content="width" />
+    <meta name="HandheldFriendly"                      content="true" />
+    <meta name="mobile-web-app-capable"                content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <link rel="shortcut icon" href="assets/img/logo_sena.webp" type="image/png" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-</head>
 
-<body>
-    <div class="container">
-        <header class="header">
-            <h1>Taller 2</h1>
-        </header>
+    <!-- Ícono -->
+    <link rel="shortcut icon" href="./assets/img/logo_sena.webp" type="image/webp" />
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="grid.html">Grid</a></li>
-                <li><a href="multimedia.html">Multimedia</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+    <!-- Estilos: base primero, luego los específicos de la página -->
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/grid.css" />
+  </head>
 
-        <section class="main">
+  <body>
 
-            <div class="grid">
-                <header class="grid-cell header-cell">El header del grid (ocupa todas las columnas)</header>
-                <aside class="grid-cell aside-cell">Sidebar</aside>
-                <main class="grid-cell main-cell">Contenido principal</main>
-                <section class="grid-cell section-cell">Sección 1</section>
-                <section class="grid-cell section-cell">Sección 2</section>
-                <footer class="grid-cell footer-cell">El footer del grid (ocupa todas las columnas)</footer>
-            </div>
+    <!-- ══════════════════ HEADER ══════════════════ -->
+    <header class="header">
+      <h1>Taller 2</h1>
 
-            <section class="container-box-model">
-                <div class="box-margin">
-                    <span class="box-label">Margin</span>
-                    <div class="box-border">
-                        <span class="box-label">Border</span>
-                        <div class="box-padding">
-                            <span class="box-label">Padding</span>
-                            <div class="box-content">Content</div>
-                        </div>
-                    </div>
+      <!-- nav: el enlace de la página actual lleva la clase "active" -->
+      <nav class="nav" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html">Inicio</a></li>
+          <li class="nav__item"><a href="grid.html" class="active">Grid</a></li>
+          <li class="nav__item"><a href="multimedia.html">Multimedia</a></li>
+          <li class="nav__item"><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ══════════════════ MAIN ══════════════════ -->
+    <main>
+
+      <!--
+        SECCIÓN 1: Grid CSS
+        Muestra las áreas de un layout típico con grid-template-areas.
+      -->
+      <section aria-labelledby="titulo-grid">
+        <div class="section-card">
+          <h2 id="titulo-grid" class="section-title">CSS Grid Layout</h2>
+          <p class="section-desc">
+            El layout con <code>grid-template-areas</code> permite definir zonas
+            nombradas y organizar el contenido de forma visual.
+          </p>
+
+          <div class="layout-grid">
+            <header class="grid-cell cell--header">Header</header>
+            <aside  class="grid-cell cell--sidebar">Sidebar</aside>
+            <div    class="grid-cell cell--main">Contenido principal</div>
+            <section class="grid-cell cell--sec1">Sección 1</section>
+            <section class="grid-cell cell--sec2">Sección 2</section>
+            <footer class="grid-cell cell--footer">Footer</footer>
+          </div>
+        </div>
+      </section>
+
+      <!--
+        SECCIÓN 2: Box Model
+        Visualización en capas del modelo de caja CSS:
+        Margin > Border > Padding > Content
+      -->
+      <section aria-labelledby="titulo-boxmodel">
+        <div class="section-card">
+          <h2 id="titulo-boxmodel" class="section-title">CSS Box Model</h2>
+          <p class="section-desc">
+            El modelo de caja de CSS define cómo se calcula el espacio de cada
+            elemento: <code>content</code>, <code>padding</code>,
+            <code>border</code> y <code>margin</code>, de adentro hacia afuera.
+          </p>
+
+          <div class="box-model">
+            <div class="box-margin">
+              <span class="box-label">Margin</span>
+              <div class="box-border">
+                <span class="box-label">Border</span>
+                <div class="box-padding">
+                  <span class="box-label">Padding</span>
+                  <div class="box-content">Content</div>
                 </div>
-            </section>
-        </section>
-        <footer>
-            Joan Stiven Rios Valderrama. Todos los derechos reservados
-            &copy; 2026.
-        </footer>
-    </div>
-</body>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
+    </main>
+
+    <!-- ══════════════════ FOOTER ══════════════════ -->
+    <footer class="footer">
+      Joan Stiven Rios Valderrama &mdash; Todos los derechos reservados &copy; 2026.
+    </footer>
+
+  </body>
 </html>

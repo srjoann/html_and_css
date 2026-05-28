@@ -1,0 +1,156 @@
+/* ================================================
+   grid.css — Estilos exclusivos de grid.html
+   Depende de: base.css
+   ================================================ */
+
+
+/* ── Tarjeta de sección ── */
+
+.section-card {
+  background-color: var(--bg);
+  border-radius: var(--r-lg);
+  padding: var(--pad);
+  margin-bottom: var(--gap);
+}
+
+.section-title {
+  display: inline-block;
+  width: fit-content;
+  padding: 10px 20px;
+  background-color: var(--surface-4);
+  border-radius: var(--r-pill);
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.section-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 0 4px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+
+/* ── Grid de layout ── */
+
+/*
+  Estructura:
+  +-----------------------------+
+  |         header              |
+  +--------+--------------------+
+  | aside  |       main         |
+  +--------+---------+----------+
+  | aside  | section | section  |
+  +-----------------------------+
+  |         footer              |
+  +-----------------------------+
+*/
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr;
+  grid-template-areas:
+    "header  header  header"
+    "sidebar main    main"
+    "sidebar sec1    sec2"
+    "footer  footer  footer";
+  gap: 10px;
+  width: 100%;
+  margin-bottom: var(--gap);
+}
+
+/* Cada celda del grid tiene el mismo estilo base */
+.grid-cell {
+  padding: 60px 20px;
+  background-color: var(--surface-3);
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Asignación de áreas */
+.cell--header  { grid-area: header; }
+.cell--sidebar { grid-area: sidebar; }
+.cell--main    { grid-area: main; }
+.cell--sec1    { grid-area: sec1; }
+.cell--sec2    { grid-area: sec2; }
+.cell--footer  { grid-area: footer; }
+
+
+/* ── Box Model visual ── */
+
+.box-model {
+  width: 100%;
+  background-color: var(--bg);
+  border-radius: var(--r-md);
+  padding: var(--pad);
+  display: flex;
+  justify-content: center;
+}
+
+/* Cada capa del box model se apila visualmente */
+.box-margin,
+.box-border,
+.box-padding {
+  position: relative;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.box-margin  { background-color: #ffdfa7; padding: 44px 40px 28px; }
+.box-border  { background-color: #ffa7a7; padding: 36px 34px 26px; border: 8px solid #33333338; }
+.box-padding { background-color: #d3ffba; padding: 32px 30px 24px; }
+
+/* Etiqueta de cada capa (arriba al centro) */
+.box-label {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #333;
+  white-space: nowrap;
+}
+
+/* Núcleo del box model */
+.box-content {
+  width: 100%;
+  min-height: 100px;
+  background-color: rgb(104, 187, 255);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 18px;
+}
+
+
+/* ── Responsive ── */
+
+@media (max-width: 700px) {
+  .layout-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "sec1"
+      "sec2"
+      "footer";
+  }
+
+  .grid-cell {
+    padding: 30px 16px;
+  }
+}

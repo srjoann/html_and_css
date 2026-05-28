@@ -1,0 +1,166 @@
+/* ================================================
+   base.css — Estilos compartidos por todas las páginas
+   Autor: Joan Stiven Rios Valderrama
+   Proyecto: Taller #2 — HTML y CSS
+   ================================================ */
+
+
+/* ── Variables globales ── */
+
+:root {
+  --bg:         #f4f4f4;       /* Fondo de la página */
+  --surface:    #eaeaea;       /* Fondo de tarjetas y secciones */
+  --surface-2:  #d9d9d9;       /* Fondo de tarjetas internas */
+  --surface-3:  #cfcfcf;       /* Fondo de elementos de grid */
+  --surface-4:  #e4e4e4;       /* Fondo de wrappers de media */
+
+  --text:       #1a1a1a;       /* Color de texto principal */
+  --text-muted: #444444;       /* Color de texto secundario */
+  --link:       #1a1a1a;       /* Color de enlaces */
+
+  --font:       "Segoe UI", system-ui, sans-serif;
+
+  --r-sm:   12px;              /* Border radius pequeño */
+  --r-md:   16px;              /* Border radius mediano (tarjetas) */
+  --r-lg:   24px;              /* Border radius grande (nav, pills) */
+  --r-pill: 999px;             /* Border radius pastilla */
+
+  --gap:  20px;                /* Espacio estándar entre elementos */
+  --pad:  20px;                /* Padding estándar de secciones */
+}
+
+
+/* ── Reset ── */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;                /* Ocultar scrollbar en WebKit */
+}
+
+
+/* ── Base del documento ── */
+
+body {
+  font-family: var(--font);
+  background-color: var(--bg);
+  color: var(--text);
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  padding: 8px;
+  gap: var(--gap);
+}
+
+a {
+  text-decoration: none;
+  color: var(--link);
+}
+
+
+/* ── Header ── */
+
+.header {
+  width: 100%;
+  padding: var(--pad);
+  border-radius: var(--r-md);
+  background-color: var(--surface);
+  text-align: center;
+}
+
+
+/* ── Navegación ── */
+
+.nav {
+  display: inline-flex;
+  background-color: var(--surface-2);
+  padding: 8px;
+  border-radius: var(--r-lg);
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+}
+
+.nav__item a {
+  display: block;
+  padding: 8px 16px;
+  border-radius: var(--r-pill);
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition:
+    padding          0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background-color 0.25s ease;
+}
+
+.nav__item a:hover {
+  background-color: var(--surface);
+  padding: 8px 26px;
+}
+
+.nav__item a:active {
+  padding: 8px 30px;
+}
+
+.nav__item a.active {
+  background-color: var(--bg);
+  font-weight: 600;
+  padding: 8px 22px;
+}
+
+
+/* ── Main ── */
+
+main {
+  flex: 1;
+  width: 100%;
+  padding: var(--pad);
+  border-radius: var(--r-md);
+  background-color: var(--surface);
+}
+
+
+/* ── Footer ── */
+
+.footer {
+  width: 100%;
+  padding: 12px var(--pad);
+  border-radius: var(--r-md);
+  background-color: var(--surface);
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text);
+}
+
+
+/* ── Responsive: nav en columna en pantallas pequeñas ── */
+
+@media (max-width: 600px) {
+  .nav__list {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+/* ── Utilidad: oculto visualmente pero accesible para lectores de pantalla ── */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
