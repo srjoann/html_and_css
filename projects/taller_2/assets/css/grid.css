@@ -97,7 +97,7 @@
 .box-border,
 .box-padding {
   position: relative;
-  border-radius: 8px;
+  border-radius: var(--r-lg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,7 +126,7 @@
   width: 100%;
   min-height: 100px;
   background-color: rgb(104, 187, 255);
-  border-radius: 8px;
+  border-radius: var(--r-lg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,17 +140,11 @@
 
 @media (max-width: 700px) {
   .layout-grid {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "header"
-      "sidebar"
-      "main"
-      "sec1"
-      "sec2"
-      "footer";
+    grid-template-columns: 80px 1fr;
   }
 
   .grid-cell {
-    padding: 30px 16px;
+    padding: 20px 8px;
+    font-size: 0.8rem;
   }
 }

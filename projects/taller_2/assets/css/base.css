@@ -38,24 +38,26 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 ::-webkit-scrollbar {
   display: none;                /* Ocultar scrollbar en WebKit */
 }
 
-
+h1 {
+  margin-bottom: 24px;
+  font-size: 3rem;
+}
 /* ── Base del documento ── */
 
 body {
   font-family: var(--font);
   background-color: var(--bg);
   color: var(--text);
-
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-
   padding: 8px;
   gap: var(--gap);
 }
@@ -65,7 +67,6 @@ a {
   color: var(--link);
 }
 
-
 /* ── Header ── */
 
 .header {
@@ -73,7 +74,10 @@ a {
   padding: var(--pad);
   border-radius: var(--r-md);
   background-color: var(--surface);
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 
 
@@ -89,6 +93,8 @@ a {
 .nav__list {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 4px;
   list-style: none;
 }
@@ -145,13 +151,6 @@ main {
 
 
 /* ── Responsive: nav en columna en pantallas pequeñas ── */
-
-@media (max-width: 600px) {
-  .nav__list {
-    flex-direction: column;
-    align-items: center;
-  }
-}
 
 
 /* ── Utilidad: oculto visualmente pero accesible para lectores de pantalla ── */
