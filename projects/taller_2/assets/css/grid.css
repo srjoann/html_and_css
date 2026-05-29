@@ -78,7 +78,7 @@
 .cell--footer  { grid-area: footer; }
 
 
-/* Box model visual demo */
+/* Box model */
 
 .box-model {
   width: 100%;
@@ -102,9 +102,9 @@
   text-align: center;
 }
 
-.box-margin  { background-color: #fff158; padding: 44px 40px 28px; }
-.box-border  { background-color: #ffa7a7; padding: 36px 34px 26px; border: 8px solid #33333338; }
-.box-padding { background-color: #d3ffba; padding: 32px 30px 24px; }
+.box-margin  { background-color: #fff158c0; padding: 44px 40px 28px; }
+.box-border  { background-color: #ffa7a7ca; padding: 36px 34px 26px; border: 8px solid #33333338; }
+.box-padding { background-color: #d3ffbacb; padding: 32px 30px 24px; }
 
 /* Label shown at the top of each layer */
 .box-label {
@@ -114,7 +114,7 @@
   transform: translateX(-50%);
   font-size: 0.85rem;
   font-weight: 700;
-  color: #333;
+  color: var(--text-muted);
   white-space: nowrap;
 }
 
@@ -122,7 +122,7 @@
 .box-content {
   width: 100%;
   min-height: 100px;
-  background-color: rgb(154, 209, 255);
+  background-color: rgba(154, 210, 255, 0.485);
   border-radius: var(--radius-medium);
   display: flex;
   align-items: center;

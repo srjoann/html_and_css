@@ -1,8 +1,4 @@
-/* ================================================
-   contact.css — Styles for contact.html only
-   Author: Joan Stiven Ríos Valderrama
-   Depends on: base.css
-   ================================================ */
+/* contact.css — Styles for contact.html only */
 
 
 /* Section card wrapper */
@@ -280,7 +276,7 @@
 
 .button-read-more {
   align-self: flex-start;
-  padding: 7px 16px;
+  padding: 10px 18px;
   background-color: var(--background);
   border-radius: var(--radius-pill);
   font-size: 0.8rem;
@@ -289,8 +285,13 @@
   border: none;
   letter-spacing: 0.02em;
   margin-top: auto;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
 }
 
+.button-read-more:hover {
+  opacity: 1;
+}
 
 /* Footer cell */
 
@@ -307,6 +308,9 @@
 }
 
 .social-link {
+  background-color: var(--background);
+  border-radius: var(--radius-pill);
+  padding: 10px 18px;
   text-decoration: none;
   font-size: 0.82rem;
   font-weight: 600;
@@ -325,11 +329,68 @@
 
 @media (max-width: 700px) {
   .layout-grid {
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "sec1"
+      "sec2"
+      "footer";
   }
 
   .grid-cell {
-    padding: 20px 8px;
-    font-size: 0.8rem;
+    padding: 16px;
+    font-size: 0.875rem;
+  }
+
+  .cell--header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .brand-name img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .profile-card {
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-card__name,
+  .profile-card__role {
+    text-align: center;
+  }
+
+  .profile-card__avatar {
+    height: 220px;
+  }
+
+  .profile-card__nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .profile-card__nav li {
+    flex: 1;
+    text-align: center;
+  }
+
+  .profile-card__nav a {
+    display: block;
+    padding: 8px 4px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .cell--footer {
+    flex-wrap: wrap;
+    gap: 8px;
   }
 }

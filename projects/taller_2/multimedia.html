@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TALLER-2</title>
 
-    <!-- SEO -->
+    <!-- TAGS SEO -->
     <meta name="author"      content="Joan Stiven Rios Valderrama" />
     <meta name="description" content="Taller #2 de HTML y CSS — Multimedia: video, audio e imagen" />
     <meta name="keywords"    content="Desarrollo, Frontend, Maquetado Web, HTML, CSS, Multimedia" />
 
-    <!-- Mobile / PWA -->
+    <!-- TAGS Mobile / PWA -->
     <meta name="theme-color"                           content="#1a1a1a" />
     <meta name="MobileOptimized"                       content="width" />
     <meta name="HandheldFriendly"                      content="true" />
@@ -19,7 +19,6 @@
 
     <link rel="shortcut icon" href="./assets/img/logo.png" type="image/png" />
 
-    <!-- Styles: base first, then page-specific -->
     <link rel="stylesheet" href="./assets/css/base.css" />
     <link rel="stylesheet" href="./assets/css/multimedia.css" />
   </head>
@@ -30,7 +29,6 @@
     <header class="header">
       <h1>TALLER-2</h1>
 
-      <!-- Active link marks the current page -->
       <nav class="nav" aria-label="Navegación principal">
         <ul class="nav__list">
           <li class="nav__item"><a href="index.html">Inicio</a></li>
@@ -45,7 +43,7 @@
     <main>
       <div class="bento-grid">
 
-        <!-- VIDEO card: full width, shows a local file and a YouTube embed -->
+        <!-- VIDEO CARD -->
         <div class="bento-item bento-item--full">
           <h2 class="section-title">Tag <code>&lt;video&gt;</code></h2>
           <p class="section-description">
@@ -61,7 +59,7 @@
               <h3>Video local</h3>
               <div class="media-wrapper media-wrapper--flush">
                 <video controls>
-                  <source src="./assets/videos/video-local.mp4" type="video/mp4" />
+                  <source src="./assets/videos/local-video.mp4" type="video/mp4" />
                   Tu navegador no soporta la etiqueta de video.
                 </video>
               </div>
@@ -84,7 +82,7 @@
           </div>
         </div>
 
-        <!-- AUDIO card: local files vs cloud-hosted files -->
+        <!-- AUDIO CARD -->
         <div class="bento-item">
           <h2 class="section-title">Tag <code>&lt;audio&gt;</code></h2>
           <p class="section-description">
@@ -99,25 +97,25 @@
               <h3>Audio local</h3>
               <div class="media-wrapper">
                 <audio controls>
-                  <source src="./assets/audios/ejemplo-1.mp3" type="audio/mpeg" />
+                  <source src="./assets/audios/example-1.mp3" type="audio/mpeg" />
                   Tu navegador no soporta la etiqueta de audio.
                 </audio>
               </div>
               <div class="media-wrapper">
                 <audio controls>
-                  <source src="./assets/audios/ejemplo-2.mp3" type="audio/mpeg" />
+                  <source src="./assets/audios/example-2.mp3" type="audio/mpeg" />
                   Tu navegador no soporta la etiqueta de audio.
                 </audio>
               </div>
               <div class="media-wrapper">
                 <audio controls>
-                  <source src="./assets/audios/ejemplo-3.mp3" type="audio/mpeg" />
+                  <source src="./assets/audios/example-3.mp3" type="audio/mpeg" />
                   Tu navegador no soporta la etiqueta de audio.
                 </audio>
               </div>
             </div>
 
-            <!-- Cloud-hosted audio files -->
+            <!-- Cloud audio files -->
             <div class="media-card">
               <h3>Audio desde la nube</h3>
               <div class="media-wrapper">
@@ -152,7 +150,7 @@
           </div>
         </div>
 
-        <!-- IMAGE card: local file vs external URL -->
+        <!-- IMAGE CARD -->
         <div class="bento-item">
           <h2 class="section-title">Tag <code>&lt;img&gt;</code></h2>
           <p class="section-description">
@@ -167,7 +165,7 @@
               <h3>Imagen local</h3>
               <div class="media-wrapper">
                 <img
-                  src="./assets/img/imagen-local.jpg"
+                  src="./assets/img/example-img-local.jpg"
                   alt="Fotografía local de ejemplo"
                 />
               </div>

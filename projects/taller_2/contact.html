@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TALLER-2</title>
 
-    <!-- SEO -->
+    <!-- TAGS SEO -->
     <meta name="author"      content="Joan Stiven Rios Valderrama" />
     <meta name="description" content="Taller #2 de HTML y CSS — Grid y Box Model" />
     <meta name="keywords"    content="Desarrollo, Frontend, Maquetado Web, HTML, CSS, Grid" />
 
-    <!-- Mobile / PWA -->
+    <!-- TAGS Mobile / PWA -->
     <meta name="theme-color"                           content="#1a1a1a" />
     <meta name="MobileOptimized"                       content="width" />
     <meta name="HandheldFriendly"                      content="true" />
@@ -19,7 +19,6 @@
 
     <link rel="shortcut icon" href="./assets/img/logo.png" type="image/png" />
 
-    <!-- Styles: base first, then page-specific -->
     <link rel="stylesheet" href="./assets/css/base.css" />
     <link rel="stylesheet" href="./assets/css/contact.css" />
   </head>
@@ -30,7 +29,6 @@
     <header class="header">
       <h1>TALLER-2</h1>
 
-      <!-- Active link marks the current page -->
       <nav class="nav" aria-label="Navegación principal">
         <ul class="nav__list">
           <li class="nav__item"><a href="index.html">Inicio</a></li>
@@ -44,7 +42,7 @@
     <!-- MAIN -->
     <main>
 
-      <!-- CSS Grid demo: full bento layout with named grid areas -->
+      <!-- CSS Grid layout -->
       <section aria-labelledby="titulo-grid">
         <div class="section-card">
           <h2 id="titulo-grid" class="section-title">CSS Grid Layout</h2>
@@ -55,7 +53,7 @@
 
           <div class="layout-grid">
 
-            <!-- Grid header: logo + navigation -->
+            <!-- Grid layout header: logo + navbar -->
             <header class="grid-cell cell--header">
               <div class="cell-header__brand">
                 <span class="brand-name"><img src="./assets/img/logo.png" alt="my-logo"></span>
@@ -69,13 +67,13 @@
               </nav>
             </header>
 
-            <!-- Grid sidebar: profile card -->
+            <!-- Grid layout sidebar: profile card and navbar -->
             <aside class="grid-cell cell--sidebar">
               <div class="profile-card">
                 <h4 class="profile-card__name">Joan Stiven Rios Valderrama</h4>
                 <h3 class="profile-card__role">Student of Software Analysis and Development</h3>
                 <img
-                  src="./assets/img/ejemplo-22.jpg"
+                  src="./assets/img/example-img-perfil.jpg"
                   alt="Foto de perfil del usuario"
                   class="profile-card__avatar"
                 />
@@ -90,7 +88,7 @@
               </div>
             </aside>
 
-            <!-- Grid main: title, text, and image -->
+            <!-- Grid layout main: title, text, and image -->
             <div class="grid-cell cell--main">
               <h1 class="cell-main__title">Bienvenidos al Taller de Grid Layout</h1>
               <p class="cell-main__text">
@@ -100,13 +98,13 @@
                 commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.
               </p>
               <img
-                src="./assets/img/ejemplo-3.jpg"
+                src="./assets/img/example-img-content.jpg"
                 alt="Imagen ilustrativa del contenido principal"
                 class="cell-main__image"
               />
             </div>
 
-            <!-- Section 1: info card -->
+            <!-- Grid layout section 1: info card -->
             <section class="grid-cell cell--sec1" aria-label="Tarjeta: Diseño Responsivo">
               <div class="info-card">
                 <h3 class="info-card__title">Diseño Responsivo</h3>
@@ -118,7 +116,7 @@
               </div>
             </section>
 
-            <!-- Section 2: info card -->
+            <!-- Grid layout section 2: info card -->
             <section class="grid-cell cell--sec2" aria-label="Tarjeta: CSS Grid Avanzado">
               <div class="info-card">
                 <h3 class="info-card__title">CSS Grid Avanzado</h3>
@@ -130,7 +128,7 @@
               </div>
             </section>
 
-            <!-- Grid footer: copyright + social links -->
+            <!-- Grid layout footer: copyright + social links -->
             <footer class="grid-cell cell--footer">
               <p class="cell-footer__copyright">
                 &copy; 2026 Joan Stiven Ríos Valderrama. Todos los derechos reservados.
@@ -141,7 +139,7 @@
               </div>
             </footer>
 
-          </div><!-- /.layout-grid -->
+          </div>
         </div>
       </section>
 
