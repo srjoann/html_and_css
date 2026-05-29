@@ -10,50 +10,45 @@
     <meta name="description" content="Taller #2 de HTML y CSS — Multimedia: video, audio e imagen" />
     <meta name="keywords"    content="Desarrollo, Frontend, Maquetado Web, HTML, CSS, Multimedia" />
 
-    <!-- PWA / rendimiento móvil -->
+    <!-- Mobile / PWA -->
     <meta name="theme-color"                           content="#1a1a1a" />
     <meta name="MobileOptimized"                       content="width" />
     <meta name="HandheldFriendly"                      content="true" />
     <meta name="mobile-web-app-capable"                content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <!-- Ícono -->
-    <link rel="shortcut icon" href="./assets/img/logo_sena.webp" type="image/webp" />
+    <link rel="shortcut icon" href="./assets/img/logo.png" type="image/png" />
 
-    <!-- Estilos: base primero, luego los específicos de la página -->
+    <!-- Styles: base first, then page-specific -->
     <link rel="stylesheet" href="./assets/css/base.css" />
     <link rel="stylesheet" href="./assets/css/multimedia.css" />
   </head>
 
   <body>
 
-    <!-- ══════════════════ HEADER ══════════════════ -->
+    <!-- HEADER -->
     <header class="header">
       <h1>TALLER-2</h1>
 
-      <!-- nav: el enlace de la página actual lleva la clase "active" -->
+      <!-- Active link marks the current page -->
       <nav class="nav" aria-label="Navegación principal">
         <ul class="nav__list">
           <li class="nav__item"><a href="index.html">Inicio</a></li>
           <li class="nav__item"><a href="grid.html">Grid</a></li>
           <li class="nav__item"><a href="multimedia.html" class="active">Multimedia</a></li>
-          <li class="nav__item"><a href="#contacto">Contacto</a></li>
+          <li class="nav__item"><a href="contact.html">Contacto</a></li>
         </ul>
       </nav>
     </header>
 
-    <!-- ══════════════════ MAIN ══════════════════ -->
+    <!-- MAIN -->
     <main>
       <div class="bento-grid">
 
-        <!--
-          TARJETA 1: Tag <video>
-          Ocupa todo el ancho (bento-item--full).
-          Muestra un video local y uno embebido desde YouTube.
-        -->
+        <!-- VIDEO card: full width, shows a local file and a YouTube embed -->
         <div class="bento-item bento-item--full">
           <h2 class="section-title">Tag <code>&lt;video&gt;</code></h2>
-          <p class="section-desc">
+          <p class="section-description">
             La etiqueta <code>&lt;video&gt;</code> permite embeber archivos de
             video directamente en HTML, ya sea desde un archivo local o desde
             un servicio en la nube como YouTube.
@@ -61,7 +56,7 @@
 
           <div class="media-grid">
 
-            <!-- Video local -->
+            <!-- Local video file -->
             <div class="media-card">
               <h3>Video local</h3>
               <div class="media-wrapper media-wrapper--flush">
@@ -72,7 +67,7 @@
               </div>
             </div>
 
-            <!-- Video desde YouTube (iframe) -->
+            <!-- YouTube embed via iframe -->
             <div class="media-card">
               <h3>Video desde YouTube</h3>
               <div class="media-wrapper media-wrapper--flush">
@@ -89,44 +84,40 @@
           </div>
         </div>
 
-        <!--
-          TARJETA 2: Tag <audio>
-          Muestra un audio local y uno desde un servidor externo.
-          Cada columna incluye tres reproductores para comparar fuentes.
-        -->
+        <!-- AUDIO card: local files vs cloud-hosted files -->
         <div class="bento-item">
           <h2 class="section-title">Tag <code>&lt;audio&gt;</code></h2>
-          <p class="section-desc">
+          <p class="section-description">
             La etiqueta <code>&lt;audio&gt;</code> permite reproducir archivos
             de sonido desde una fuente local o desde la nube.
           </p>
 
           <div class="media-grid">
 
-            <!-- Audio local -->
+            <!-- Local audio files -->
             <div class="media-card">
               <h3>Audio local</h3>
               <div class="media-wrapper">
                 <audio controls>
-                  <source src="./assets/audios/music.mp3" type="audio/mpeg" />
+                  <source src="./assets/audios/ejemplo-1.mp3" type="audio/mpeg" />
                   Tu navegador no soporta la etiqueta de audio.
                 </audio>
               </div>
               <div class="media-wrapper">
                 <audio controls>
-                  <source src="./assets/audios/music.mp3" type="audio/mpeg" />
+                  <source src="./assets/audios/ejemplo-2.mp3" type="audio/mpeg" />
                   Tu navegador no soporta la etiqueta de audio.
                 </audio>
               </div>
               <div class="media-wrapper">
                 <audio controls>
-                  <source src="./assets/audios/music.mp3" type="audio/mpeg" />
+                  <source src="./assets/audios/ejemplo-3.mp3" type="audio/mpeg" />
                   Tu navegador no soporta la etiqueta de audio.
                 </audio>
               </div>
             </div>
 
-            <!-- Audio desde la nube -->
+            <!-- Cloud-hosted audio files -->
             <div class="media-card">
               <h3>Audio desde la nube</h3>
               <div class="media-wrapper">
@@ -161,20 +152,17 @@
           </div>
         </div>
 
-        <!--
-          TARJETA 3: Tag <img>
-          Muestra una imagen local y una traída desde un servicio externo.
-        -->
+        <!-- IMAGE card: local file vs external URL -->
         <div class="bento-item">
           <h2 class="section-title">Tag <code>&lt;img&gt;</code></h2>
-          <p class="section-desc">
+          <p class="section-description">
             La etiqueta <code>&lt;img&gt;</code> permite incrustar imágenes
             desde archivos locales o desde URLs externas.
           </p>
 
           <div class="media-grid">
 
-            <!-- Imagen local -->
+            <!-- Local image -->
             <div class="media-card">
               <h3>Imagen local</h3>
               <div class="media-wrapper">
@@ -185,7 +173,7 @@
               </div>
             </div>
 
-            <!-- Imagen desde la nube -->
+            <!-- Cloud image -->
             <div class="media-card">
               <h3>Imagen desde la nube</h3>
               <div class="media-wrapper">
@@ -202,7 +190,7 @@
       </div>
     </main>
 
-    <!-- ══════════════════ FOOTER ══════════════════ -->
+    <!-- FOOTER -->
     <footer class="footer">
       <p>&copy; 2026 Joan Stiven Rios Valderrama. Todos los derechos reservados.</p>
     </footer>

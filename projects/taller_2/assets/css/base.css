@@ -1,36 +1,32 @@
-/* ================================================
-   base.css — Estilos compartidos por todas las páginas
-   Autor: Joan Stiven Rios Valderrama
-   Proyecto: Taller #2 — HTML y CSS
-   ================================================ */
+/* base.css — Shared styles for all pages */
 
 
-/* ── Variables globales ── */
+/* Global CSS variables */
 
 :root {
-  --bg:         #f4f4f4;       /* Fondo de la página */
-  --surface:    #eaeaea;       /* Fondo de tarjetas y secciones */
-  --surface-2:  #d9d9d9;       /* Fondo de tarjetas internas */
-  --surface-3:  #cfcfcf;       /* Fondo de elementos de grid */
-  --surface-4:  #e4e4e4;       /* Fondo de wrappers de media */
+  --background:         #f4f4f4;
+  --surface:            #eaeaea;
+  --surface-secondary:  #d9d9d9;
+  --surface-tertiary:   #cfcfcf;
+  --surface-media:      #e4e4e4;
 
-  --text:       #1a1a1a;       /* Color de texto principal */
-  --text-muted: #444444;       /* Color de texto secundario */
-  --link:       #1a1a1a;       /* Color de enlaces */
+  --text-primary:   #1a1a1a;
+  --text-muted:     #444444;
+  --link-color:     #1a1a1a;
 
-  --font:       "Segoe UI", system-ui, sans-serif;
+  --font-family: "Segoe UI", system-ui, sans-serif;
 
-  --r-sm:   12px;              /* Border radius pequeño */
-  --r-md:   16px;              /* Border radius mediano (tarjetas) */
-  --r-lg:   24px;              /* Border radius grande (nav, pills) */
-  --r-pill: 999px;             /* Border radius pastilla */
+  --radius-small:  12px;
+  --radius-medium: 16px;
+  --radius-large:  24px;
+  --radius-pill:   999px;
 
-  --gap:  20px;                /* Espacio estándar entre elementos */
-  --pad:  20px;                /* Padding estándar de secciones */
+  --gap:     20px;
+  --padding: 20px;
 }
 
 
-/* ── Reset ── */
+/* Reset */
 
 *,
 *::before,
@@ -42,19 +38,21 @@
 }
 
 ::-webkit-scrollbar {
-  display: none;                /* Ocultar scrollbar en WebKit */
+  display: none;
 }
 
 h1 {
   margin-bottom: 24px;
   font-size: 3rem;
 }
-/* ── Base del documento ── */
+
+
+/* Document base */
 
 body {
-  font-family: var(--font);
-  background-color: var(--bg);
-  color: var(--text);
+  font-family: var(--font-family);
+  background-color: var(--background);
+  color: var(--text-primary);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -64,15 +62,16 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--link);
+  color: var(--link-color);
 }
 
-/* ── Header ── */
+
+/* Header */
 
 .header {
   width: 100%;
-  padding: var(--pad);
-  border-radius: var(--r-md);
+  padding: var(--padding);
+  border-radius: var(--radius-medium);
   background-color: var(--surface);
   display: flex;
   flex-direction: column;
@@ -81,13 +80,13 @@ a {
 }
 
 
-/* ── Navegación ── */
+/* Navigation */
 
 .nav {
   display: inline-flex;
-  background-color: var(--surface-2);
+  background-color: var(--surface-secondary);
   padding: 8px;
-  border-radius: var(--r-lg);
+  border-radius: var(--radius-large);
 }
 
 .nav__list {
@@ -102,7 +101,7 @@ a {
 .nav__item a {
   display: block;
   padding: 8px 16px;
-  border-radius: var(--r-pill);
+  border-radius: var(--radius-pill);
   font-size: 0.95rem;
   white-space: nowrap;
   transition:
@@ -120,40 +119,37 @@ a {
 }
 
 .nav__item a.active {
-  background-color: var(--bg);
+  background-color: var(--background);
   font-weight: 600;
   padding: 8px 22px;
 }
 
 
-/* ── Main ── */
+/* Main content area */
 
 main {
   flex: 1;
   width: 100%;
-  padding: var(--pad);
-  border-radius: var(--r-md);
+  padding: var(--padding);
+  border-radius: var(--radius-medium);
   background-color: var(--surface);
 }
 
 
-/* ── Footer ── */
+/* Footer */
 
 .footer {
   width: 100%;
-  padding: 12px var(--pad);
-  border-radius: var(--r-md);
+  padding: 12px var(--padding);
+  border-radius: var(--radius-medium);
   background-color: var(--surface);
   text-align: center;
   font-size: 0.875rem;
-  color: var(--text);
+  color: var(--text-primary);
 }
 
 
-/* ── Responsive: nav en columna en pantallas pequeñas ── */
-
-
-/* ── Utilidad: oculto visualmente pero accesible para lectores de pantalla ── */
+/* Visually hidden (accessible to screen readers) */
 
 .visually-hidden {
   position: absolute;

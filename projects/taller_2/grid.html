@@ -10,49 +10,45 @@
     <meta name="description" content="Taller #2 de HTML y CSS — Grid y Box Model" />
     <meta name="keywords"    content="Desarrollo, Frontend, Maquetado Web, HTML, CSS, Grid" />
 
-    <!-- PWA / rendimiento móvil -->
+    <!-- Mobile / PWA -->
     <meta name="theme-color"                           content="#1a1a1a" />
     <meta name="MobileOptimized"                       content="width" />
     <meta name="HandheldFriendly"                      content="true" />
     <meta name="mobile-web-app-capable"                content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <!-- Ícono -->
-    <link rel="shortcut icon" href="./assets/img/logo_sena.webp" type="image/webp" />
+    <link rel="shortcut icon" href="./assets/img/logo.png" type="image/png" />
 
-    <!-- Estilos: base primero, luego los específicos de la página -->
+    <!-- Styles: base first, then page-specific -->
     <link rel="stylesheet" href="./assets/css/base.css" />
     <link rel="stylesheet" href="./assets/css/grid.css" />
   </head>
 
   <body>
 
-    <!-- ══════════════════ HEADER ══════════════════ -->
+    <!-- HEADER -->
     <header class="header">
       <h1>TALLER-2</h1>
 
-      <!-- nav: el enlace de la página actual lleva la clase "active" -->
+      <!-- Active link marks the current page -->
       <nav class="nav" aria-label="Navegación principal">
         <ul class="nav__list">
           <li class="nav__item"><a href="index.html">Inicio</a></li>
           <li class="nav__item"><a href="grid.html" class="active">Grid</a></li>
           <li class="nav__item"><a href="multimedia.html">Multimedia</a></li>
-          <li class="nav__item"><a href="#contacto">Contacto</a></li>
+          <li class="nav__item"><a href="contact.html">Contacto</a></li>
         </ul>
       </nav>
     </header>
 
-    <!-- ══════════════════ MAIN ══════════════════ -->
+    <!-- MAIN -->
     <main>
 
-      <!--
-        SECCIÓN 1: Grid CSS
-        Muestra las áreas de un layout típico con grid-template-areas.
-      -->
+      <!-- CSS Grid demo: shows named grid areas in a typical layout -->
       <section aria-labelledby="titulo-grid">
         <div class="section-card">
           <h2 id="titulo-grid" class="section-title">CSS Grid Layout</h2>
-          <p class="section-desc">
+          <p class="section-description">
             El layout con <code>grid-template-areas</code> permite definir zonas
             nombradas y organizar el contenido de forma visual.
           </p>
@@ -68,15 +64,11 @@
         </div>
       </section>
 
-      <!--
-        SECCIÓN 2: Box Model
-        Visualización en capas del modelo de caja CSS:
-        Margin > Border > Padding > Content
-      -->
+      <!-- Box model demo: layered visual of margin > border > padding > content -->
       <section aria-labelledby="titulo-boxmodel">
         <div class="section-card">
           <h2 id="titulo-boxmodel" class="section-title">CSS Box Model</h2>
-          <p class="section-desc">
+          <p class="section-description">
             El modelo de caja de CSS define cómo se calcula el espacio de cada
             elemento: <code>content</code>, <code>padding</code>,
             <code>border</code> y <code>margin</code>, de adentro hacia afuera.
@@ -99,7 +91,7 @@
 
     </main>
 
-    <!-- ══════════════════ FOOTER ══════════════════ -->
+    <!-- FOOTER -->
     <footer class="footer">
       <p>&copy; 2026 Joan Stiven Rios Valderrama. Todos los derechos reservados.</p>
     </footer>

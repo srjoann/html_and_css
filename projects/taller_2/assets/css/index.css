@@ -1,14 +1,14 @@
 /* ================================================
-   index.css — Estilos exclusivos de index.html
-   Depende de: base.css
+   index.css — Styles for index.html only
+   Depends on: base.css
    ================================================ */
 
 
-/* ── Sección de bienvenida ── */
+/* Welcome section */
 
 .welcome {
-  background-color: var(--bg);
-  border-radius: var(--r-lg);
+  background-color: var(--background);
+  border-radius: var(--radius-large);
   padding: 40px;
 }
 

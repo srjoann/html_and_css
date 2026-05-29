@@ -1,0 +1,335 @@
+/* ================================================
+   contact.css — Styles for contact.html only
+   Author: Joan Stiven Ríos Valderrama
+   Depends on: base.css
+   ================================================ */
+
+
+/* Section card wrapper */
+
+.section-card {
+  background-color: var(--background);
+  border-radius: var(--radius-large);
+  padding: var(--padding);
+  margin-bottom: var(--gap);
+}
+
+.section-title {
+  display: inline-block;
+  width: fit-content;
+  padding: 10px 20px;
+  background-color: var(--surface-media);
+  border-radius: var(--radius-pill);
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.section-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 0 4px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+
+/* Grid layout */
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: 500px 1fr 1fr;
+  grid-template-rows: auto 1fr auto auto auto;
+  grid-template-areas:
+    "header  header  header"
+    "sidebar main    main"
+    "sidebar sec1    sec2"
+    "footer  footer  footer";
+  gap: 10px;
+  width: 100%;
+  margin-bottom: var(--gap);
+  align-items: stretch;
+}
+
+/* Shared base for every grid cell */
+.grid-cell {
+  padding: 20px;
+  background-color: var(--surface-media);
+  border-radius: var(--radius-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  text-align: center;
+  flex-direction: column;
+}
+
+/* Grid area assignments */
+.cell--header  { grid-area: header; }
+.cell--sidebar { grid-area: sidebar; }
+.cell--main    { grid-area: main; }
+.cell--sec1    { grid-area: sec1; }
+.cell--sec2    { grid-area: sec2; }
+.cell--footer  { grid-area: footer; }
+
+
+/* Header and footer: horizontal row layout */
+
+.cell--header,
+.cell--footer {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 22px;
+  text-align: left;
+}
+
+/* Sidebar, main, and section cells: left-aligned column */
+.cell--sidebar,
+.cell--main,
+.cell--sec1,
+.cell--sec2 {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+/* Sidebar stretches to fill available height */
+.cell--sidebar {
+  padding: 0;
+  align-self: stretch;
+}
+
+
+/* Header cell: brand logo + nav */
+
+.cell-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-name img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Header nav: same pill container as the global .nav */
+.cell--header nav {
+  display: inline-flex;
+  background-color: var(--surface-secondary);
+  padding: 8px;
+  border-radius: var(--radius-large);
+}
+
+.cell-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header nav links: same style as global .nav__item a */
+.cell-nav__link {
+  display: block;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    padding          0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background-color 0.25s ease;
+}
+
+.cell-nav__link:hover {
+  background-color: var(--surface);
+  padding: 8px 26px;
+}
+
+.cell-nav__link:active {
+  padding: 8px 30px;
+}
+
+
+/* Sidebar cell: profile card with avatar and vertical nav */
+
+.profile-card {
+  width: 100%;
+  height: 100%;
+  padding: 24px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.profile-card__avatar {
+  margin-top: 22px;
+  width: 100%;
+  height: 600px;
+  min-height: 0;
+  border-radius: var(--radius-medium);
+  object-fit: cover;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.profile-card__name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.profile-card__role {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin: 0 0 16px;
+}
+
+/* Vertical nav: same pill container as the global header nav */
+.profile-card__nav {
+  display: flex;
+  width: 100%;
+  gap: 4px;
+  list-style: none;
+  padding: 8px;
+  margin: 0;
+  background-color: var(--surface-secondary);
+  border-radius: var(--radius-large);
+}
+
+/* Vertical nav links: same animation as global .nav__item a */
+.profile-card__nav a {
+  display: block;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    padding          0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background-color 0.25s ease;
+}
+
+.profile-card__nav a:hover {
+  background-color: var(--surface);
+  padding: 8px 26px;
+}
+
+.profile-card__nav a:active {
+  padding: 8px 30px;
+}
+
+
+/* Main cell */
+
+.cell-main__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.cell-main__text {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  opacity: 0.7;
+  margin: 0 0 14px;
+}
+
+.cell-main__image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-medium);
+  display: block;
+}
+
+
+/* Section cells: info cards */
+
+.info-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.info-card__title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.info-card__text {
+  font-size: 0.83rem;
+  line-height: 1.6;
+  opacity: 0.7;
+  margin: 0;
+  flex: 1;
+}
+
+.button-read-more {
+  align-self: flex-start;
+  padding: 7px 16px;
+  background-color: var(--background);
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  letter-spacing: 0.02em;
+  margin-top: auto;
+}
+
+
+/* Footer cell */
+
+.cell-footer__copyright {
+  font-size: 0.78rem;
+  opacity: 0.6;
+  margin: 10px;
+  font-weight: 400;
+}
+
+.cell-footer__social {
+  display: flex;
+  gap: 16px;
+}
+
+.social-link {
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: inherit;
+  opacity: 0.75;
+  letter-spacing: 0.03em;
+  transition: opacity 0.2s ease;
+}
+
+.social-link:hover {
+  opacity: 1;
+}
+
+
+/* Responsive */
+
+@media (max-width: 700px) {
+  .layout-grid {
+    grid-template-columns: 80px 1fr;
+  }
+
+  .grid-cell {
+    padding: 20px 8px;
+    font-size: 0.8rem;
+  }
+}
