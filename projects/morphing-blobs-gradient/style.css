@@ -41,7 +41,7 @@ svg {
 .blobs {
   position: absolute;
   inset: 0;
-  filter: url(#goo) blur(50px) saturate(140%);
+filter: url(#goo) blur(40px) saturate(90%);
 }
 .blob {
   position: absolute;
