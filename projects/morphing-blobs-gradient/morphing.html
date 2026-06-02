@@ -3,35 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-   <link rel="stylesheet" href="style.css">
+    <title>Morphing Blobs Gradient — SVG Animación</title>
+    <meta name="author" content="Joan Stiven Valderrama" />
+    <meta name="description" content="Animación de morphing blobs con SVG y filtros para demostrar un fondo dinámico en HTML y CSS." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="morphing.html" />
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="wrapper noise">
-      <svg xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <filter id="goo">
-            <feGaussianBlur
-              in="SourceGraphic"
-              stdDeviation="18"
-              result="blur"
-            />
-            <feColorMatrix
-              in="blur"
-              mode="matrix"
-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -12"
-              result="goo"
-            />
-            <feBlend in="SourceGraphic" in2="goo" />
-          </filter>
-        </defs>
-      </svg>
-      <div class="blobs">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-        <div class="blob blob-4"></div>
-        <div class="blob blob-5"></div>
+    <main>
+      <h1>Animación SVG de morphing blobs</h1>
+      <div class="wrapper noise" aria-label="Animación de blobs morphing">
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur
+                in="SourceGraphic"
+                stdDeviation="18"
+                result="blur"
+              />
+              <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -12"
+                result="goo"
+              />
+              <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+          </defs>
+        </svg>
+        <div class="blobs">
+          <div class="blob blob-1"></div>
+          <div class="blob blob-2"></div>
+          <div class="blob blob-3"></div>
+          <div class="blob blob-4"></div>
+          <div class="blob blob-5"></div>
+        </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>

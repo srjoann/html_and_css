@@ -1,0 +1,641 @@
+
+:root {
+    /* ── Paleta Principal ── */
+    --clr-dark: #1a1a1a;
+    --clr-dark-card: #232323;
+    --clr-white: #ffffff;
+    --clr-gray: #f0f0f0;
+    --clr-off-white: var(--clr-gray);
+    --clr-body-bg: var(--clr-gray);
+    --clr-border: #e5e5e5;
+
+    /* ── Colores de Acento ── */
+    --clr-lavender: #eaddff;
+    --clr-yellow: #fff8cd;
+    --clr-peach: #ffe5d9;
+    --clr-blue-soft: #e3f2fd;
+    --clr-green-soft: #e8f5e9;
+    --clr-mint: #e0f2f1;
+    --clr-pink-soft: #fce4ec;
+
+    /* ── Tipografía ── */
+    --font-body: 'Segoe UI', sans-serif;
+    --font-display: 'Segoe UI', sans-serif;
+
+    /* ── Espaciado ── */
+    --gap: 14px;
+    --radius: 22px;
+    --radius-sm: 14px;
+    --radius-pill: 100px;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+/* Reinicio de etiquetas semánticas */
+address {
+    font-style: normal;
+}
+
+blockquote,
+figure {
+    margin: 0;
+}
+
+time {
+    display: block;
+}
+
+figcaption {
+    display: block;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* CONTENEDOR DE PÁGINA */
+.cv-page {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* CUADRÍCULA BENTO */
+.bento-grid {
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--gap);
+    margin-bottom: var(--gap);
+}
+
+/* Tarjeta Base */
+.card {
+    border-radius: var(--radius);
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* VARIANTES DE TARJETA */
+
+/* TARJETA DE NOMBRE Y ROL */
+.card--role {
+    grid-column: span 7;
+    grid-row: span 1;
+    background-color: var(--clr-lavender);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.role-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    color: var(--clr-dark);
+    margin-bottom: 16px;
+}
+
+.role-profession {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #555;
+    line-height: 1.4;
+    letter-spacing: 0.2px;
+}
+
+
+
+/* TARJETA DE FOTO */
+.card--photo {
+    grid-column: span 5;
+    grid-row: span 1;
+    background-color: var(--clr-green-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 200px;
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 180px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* TARJETA DE FRASE MOTIVACIONAL */
+.card--message {
+    grid-column: span 12;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../img/cieloo.webp');
+    background-size: cover;
+    background-position: top center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 36px 32px;
+}
+
+.quote-text-dark {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2.8vw, 1.6rem);
+    font-weight: 800;
+    line-height: 1.4;
+    color: var(--clr-white);
+    text-align: center;
+    letter-spacing: 0.8px;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+/* TARJETA DE CONTACTO */
+.card--contact {
+    grid-column: span 12;
+    background-color: var(--clr-mint);
+    padding: 20px 28px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    align-items: center;
+}
+
+.contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 8px 18px;
+    border-radius: var(--radius-pill);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--clr-dark);
+    cursor: default;
+}
+
+.contact-item svg {
+    flex-shrink: 0;
+    opacity: 0.7;
+}
+
+/* TARJETA SOBRE MÍ */
+.card--about {
+    grid-column: span 6;
+    background-color: var(--clr-blue-soft);
+    padding: 28px;
+}
+
+.card-heading-dark {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--clr-dark);
+    margin-bottom: 14px;
+}
+
+.card-text-dark {
+    font-size: 0.88rem;
+    color: #444;
+    line-height: 1.65;
+}
+
+/* TARJETA DE HABILIDADES */
+.card--skills {
+    grid-column: span 6;
+    background-color: var(--clr-peach);
+    padding: 28px;
+}
+
+.skills-heading {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--clr-dark);
+    margin-bottom: 18px;
+}
+
+.skills-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-pill {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: var(--clr-dark);
+    padding: 7px 16px;
+    border-radius: var(--radius-pill);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+/* TARJETA DE HERRAMIENTAS */
+.card--tools {
+    grid-column: span 7;
+    background-color: var(--clr-pink-soft);
+    padding: 28px;
+}
+
+.tools-heading {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--clr-dark);
+    margin-bottom: 22px;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.tool-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--clr-dark);
+}
+
+.tool-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.tool-icon--vs {
+    background-color: #e8f4fd;
+}
+
+.tool-icon--figma {
+    background-color: #fce4ec;
+}
+
+.tool-icon--git {
+    background-color: #fbe9e7;
+}
+
+.tool-icon--chrome {
+    background-color: #e8f5e9;
+}
+
+.tool-icon--npm {
+    background-color: #ffebee;
+}
+
+.tool-icon--canva {
+    background-color: #e0f7fa;
+}
+
+/* TARJETA DE EXPERIENCIA LABORAL */
+.card--experience {
+    grid-column: span 5;
+    background-color: var(--clr-yellow);
+    padding: 28px;
+}
+
+.card-heading-light {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--clr-dark);
+    margin-bottom: 20px;
+}
+
+.experience-block {
+    padding: 18px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: var(--radius-sm);
+}
+
+.exp-company {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--clr-dark);
+    margin-bottom: 4px;
+}
+
+.exp-period {
+    font-size: 0.78rem;
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.exp-role {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+.exp-desc {
+    font-size: 0.82rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* TARJETA DE EDUCACIÓN */
+.card--education {
+    grid-column: span 6;
+    background-color: var(--clr-blue-soft);
+    padding: 28px;
+}
+
+.section-heading-pill {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--clr-dark);
+    margin-bottom: 18px;
+}
+
+.edu-block {
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: var(--radius-sm);
+}
+
+.edu-institution {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--clr-dark);
+    margin-bottom: 4px;
+}
+
+.edu-year {
+    font-size: 0.78rem;
+    color: #555;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.edu-detail {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* TARJETA DE CERTIFICACIONES */
+.card--certs {
+    grid-column: span 6;
+    background-color: var(--clr-mint);
+    padding: 28px;
+}
+
+.cert-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cert-item {
+    display: flex;
+    flex-direction: column;
+    padding: 14px 18px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: var(--radius-sm);
+}
+
+.cert-name {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--clr-dark);
+}
+
+.cert-source {
+    font-size: 0.78rem;
+    color: #555;
+    margin-top: 4px;
+}
+
+/* TARJETA DE PASATIEMPOS */
+.card--hobbies {
+    grid-column: span 5;
+    background-color: var(--clr-peach);
+    padding: 28px;
+}
+
+.hobbies-title {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--clr-dark);
+    margin-bottom: 16px;
+}
+
+.hobbies-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hobby-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 18px;
+    border-radius: var(--radius-pill);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--clr-dark);
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* TARJETA DE FRASE CON IMAGEN */
+.card--love {
+    grid-column: span 7;
+    background-color: var(--clr-lavender);
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 36px 32px;
+}
+
+.card--love::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+    pointer-events: none;
+}
+
+.love-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.27);
+    /* 15% de zoom */
+}
+
+/* PIE DE PÁGINA */
+.main-footer {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--clr-off-white);
+    color: #666;
+    text-align: center;
+    padding: 24px;
+    font-size: 0.82rem;
+    margin-top: var(--gap);
+    border-radius: var(--radius);
+    border: 1.5px solid var(--clr-border);
+}
+
+
+
+/* RESPONSIVO: TABLETA */
+@media (max-width: 900px) {
+    .bento-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .card--role {
+        grid-column: span 4;
+        grid-row: span 1;
+    }
+
+    .card--photo {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+
+    .card--message {
+        grid-column: span 6;
+    }
+
+    .card--contact {
+        grid-column: span 6;
+    }
+
+    .card--about {
+        grid-column: span 6;
+    }
+
+    .card--skills {
+        grid-column: span 6;
+    }
+
+    .card--tools {
+        grid-column: span 6;
+    }
+
+    .card--experience {
+        grid-column: span 6;
+    }
+
+    .card--education {
+        grid-column: span 6;
+    }
+
+    .card--certs {
+        grid-column: span 6;
+    }
+
+    .card--hobbies {
+        grid-column: span 3;
+    }
+
+    .card--love {
+        grid-column: span 3;
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* RESPONSIVO: MÓVIL */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .card--role,
+    .card--photo,
+    .card--message,
+    .card--contact,
+    .card--about,
+    .card--skills,
+    .card--tools,
+    .card--experience,
+    .card--education,
+    .card--certs,
+    .card--hobbies,
+    .card--love {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .card--photo {
+        min-height: 180px;
+    }
+
+    .profile-img {
+        max-width: 140px;
+    }
+
+    .role-title {
+        font-size: 2rem;
+    }
+
+    .tools-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-item {
+        font-size: 0.75rem;
+        padding: 6px 14px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}

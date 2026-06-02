@@ -3,15 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Landing</title>
+    <title>Box Model — Taller HTML y CSS</title>
 
     <!-- ETIQUETAS SEO -->
     <meta name="author" content="Joan Stiven Valderrama" />
-    <meta name="description" content="Taller #2 de html y css" />
+    <meta name="description" content="Demostración del modelo de caja CSS con margin, border, padding y content para el Taller de HTML y CSS." />
     <meta
       name="keywords"
-      content="Desarrollo, Frontend, Maquetado Web, HTML, CSS."
+      content="Desarrollo, Frontend, Maquetado Web, HTML, CSS, Box Model"
     />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="index.html" />
 
     <!-- RENDIMIENTO Y PWA -->
     <meta name="theme-color" content="#1a1a1a" />
@@ -31,8 +33,9 @@
   </head>
 
   <body>
-      </section>
-      <section class="container-box-model">
+    <main>
+      <section class="container-box-model" aria-labelledby="titulo-boxmodel">
+        <h1 id="titulo-boxmodel">Modelo de caja CSS</h1>
         <div class="box-margin">
           <span class="box-label">MARGIN</span>
           <div class="box-border">
@@ -44,5 +47,6 @@
           </div>
         </div>
       </section>
+    </main>
   </body>
 </html>

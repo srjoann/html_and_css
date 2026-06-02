@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Taller 1 — Joan Stiven Rios Valderrama</title>
+    <title>Currículum — Joan Stiven Rios Valderrama</title>
 
     <!-- ETIQUETAS SEO -->
     <meta name="author" content="Joan Stiven Valderrama">
@@ -13,7 +13,7 @@
     <meta name="keywords"
         content="Desarrollador Frontend, Maquetador Web, HTML, CSS, JavaScript, React, CV, Portafolio">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="index.html" />
+    <link rel="canonical" href="cv.html" />
 
     <!-- RENDIMIENTO Y PWA -->
     <meta name="theme-color" content="#1a1a1a">
@@ -24,15 +24,30 @@
     <link rel="shortcut icon" href="assets/img/logo_sena.webp" type="image/png">
 
     <!-- PRECARGA DE RECURSOS CRÍTICOS -->
-    <link rel="preload" href="assets/css/style.css" as="style">
     <link rel="preload" href="assets/img/logo_sena.webp" as="image">
     <link rel="preload" href="assets/img/cieloo.webp" as="image">
 
     <!-- ESTILOS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+     <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/cv.css">
 </head>
 
 <body>
+
+    <header class="header">
+      <h1>Taller 2 | Currículum</h1>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html">Inicio</a></li>
+          <li class="nav__item"><a href="grid.html">Grid</a></li>
+          <li class="nav__item"><a href="multimedia.html">Multimedia</a></li>
+          <li class="nav__item"><a href="contact.html">Contacto</a></li>
+          <li class="nav__item"><a href="cv.html" class="active">Currículum</a></li>
+        </ul>
+      </nav>
+    </header>
+
     <div class="cv-page">
 
         <!-- ════════════════════════════════════════════════ -->
@@ -42,7 +57,7 @@
 
             <!-- ── ENCABEZADO: NOMBRE Y ROL ── -->
             <header class="card card--role">
-                <h1 class="role-title">Joan Stiven<br>Rios Valderrama</h1>
+                <h2 class="role-title">Joan Stiven<br>Rios Valderrama</h2>
                 <p class="role-profession">Estudiante de Tecnología en<br>Análisis y Desarrollo de Software</p>
             </header>
 
@@ -194,10 +209,9 @@
                 <h2 class="card-heading-light">Experiencia Laboral</h2>
                 <article class="experience-block">
                     <h3 class="exp-company">Empresa Tech</h3>
-                    <time class="exp-period" datetime="2023">2023 - Actual</time>
+                    <time class="exp-period" datetime="2023">2026 - Actual</time>
                     <p class="exp-role">Sr. Maquetador Web</p>
-                    <p class="exp-desc">Desarrollo de interfaces responsivas, mantenimiento de estilos con BEM y
-                        optimización de carga.</p>
+                    <p class="exp-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta necessitatibus commodi tempore? Quisquam explicabo earum consequatur voluptates quis neque non laudantium eaque libero, aliquam, delectus voluptatum accusamus, hic eos ad.</p>
                 </article>
             </section>
 
@@ -206,7 +220,7 @@
                 <h2 class="section-heading-pill">Educación</h2>
                 <article class="edu-block">
                     <h3 class="edu-institution">SENA</h3>
-                    <time class="edu-year" datetime="2024">2024</time>
+                    <time class="edu-year" datetime="2026">2026</time>
                     <p class="edu-detail">Análisis y Desarrollo de Software. Formación técnica en programación, bases de
                         datos y desarrollo web.</p>
                 </article>
@@ -217,12 +231,12 @@
                 <h2 class="section-heading-pill">Certificaciones</h2>
                 <ul class="cert-list">
                     <li class="cert-item">
-                        <strong class="cert-name">Diseño Web Responsivo</strong>
-                        <span class="cert-source">FreeCodeCamp - <time datetime="2023">2023</time></span>
+                        <strong class="cert-name">Introduccion HTML</strong>
+                        <span class="cert-source">SoloLearn - <time datetime="2026">2026</time></span>
                     </li>
                     <li class="cert-item">
-                        <strong class="cert-name">Desarrollador Frontend</strong>
-                        <span class="cert-source">Platzi / Coursera - <time datetime="2023">2023</time></span>
+                        <strong class="cert-name">Introduccion CSS</strong>
+                        <span class="cert-source">SoloLearn - <time datetime="2026">2026</time></span>
                     </li>
                 </ul>
             </section>
